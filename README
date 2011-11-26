@@ -1,0 +1,57 @@
+=== SCSS Fluid Grid ===
+
+Contributors: Gilles Vauvarin
+Tags: sass, scss, css, fluid grid
+License: GPLv2
+
+
+== Description ==
+
+This is a configurable fluid grid encoded in SCSS. Chose the number of columns, the columns width and the gutters width and "SCSS Fluid Grid" do the rest to build your own fluid grid.
+
+To use and compile this file, you need to install Ruby (http://www.ruby-lang.org/) and SASS (http://sass-lang.com/).
+
+The code is heavily based on the Inuitcss framework (http://csswizardry.com/inuitcss/).
+
+
+Files description
+
+	_fluid-grid.scss: 	mixins to build the fluid grid.
+	style.css.scss: 	exemple of scss file.
+	style.css: 			exemple of css file generated after compilation.
+	index.html:			exemple of html file.
+	
+. Forge allows as many partials you want for breaking up your CSS into an organized structure.			
+
+
+== Set up ==
+
+1- Import the partial "_fluid-grid.scss" stylesheet in your scss file (here style.css.scss):
+   @import "fluid-grid";
+
+2- Set the values to the "fluid_grid()" mixin to build your own fluid grid. 
+
+	By default, 
+		... the number of columns is set to 18.
+		... the column width is set to 40px.
+		... the gutter width is set to 15px.
+	The SCSS Fluid Grid convert these values in pourcentage.
+
+	Exemple: 
+	If you want a grid with twenty columns, 45px column width and 10px gutter width, put the code below in your scss file.
+
+	@include fluid_grid($column-nbr:20, $column-width:45, $gutter-width:10);
+
+	Don't forget, SCSS Fluid Grid is a fluid grid so the number chosed for the column and gutter grid will be converted in pourcentage.
+	
+3- Compile your scss file with a Ruby tool.
+
+4- Import your new custom css file in your html file and use the different classes.
+   Check the code of "index.html" file to see how to use these classes.
+
+
+== Changelog ==
+
+= 0.1 =
+
+* Initial release
