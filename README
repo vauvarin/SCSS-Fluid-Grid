@@ -18,10 +18,9 @@ Files description
 
 	_fluid-grid.scss: 	mixins to build the fluid grid.
 	style.css.scss: 	exemple of scss file.
-	style.css: 			exemple of css file generated after compilation.
-	index.html:			exemple of html file.
-	
-. Forge allows as many partials you want for breaking up your CSS into an organized structure.			
+	style.css: 		exemple of css file generated after compilation.
+	index.html:		exemple of html file.
+				
 
 
 == Set up ==
