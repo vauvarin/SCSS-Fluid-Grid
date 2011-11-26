@@ -1,0 +1,11 @@
+@import "fluid-grid";
+
+/**
+* Fluid grid
+*	Default values:
+* 	Number of columns: 18
+* 	Column width: 40px (will be set in pourcentage)
+* 	Gutter width: 15px (will be set in pourcentage)
+*/
+@include fluid_grid($column-nbr:18, $column-width:40, $gutter-width:15); // Change these values to build your own fluid grid
+

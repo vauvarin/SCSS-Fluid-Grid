@@ -1,0 +1,89 @@
+/* ////////////////////////////////////////////////////////////////
+
+    Document   : SCSS fluid_grid
+    Author     : Gilles Vauvarin
+    Description: scss fluid css grid
+    Grid inspired from inuitcss framework 
+    http://csswizardry.com/inuitcss/
+
+/////////////////////////////////////////////////////////////////// */
+
+// VARIABLES:
+
+// Total number of columns			
+$column-nbr:18;
+
+// Width of each columns (px equivalent)
+$column-width:40;
+
+// Width of each gutters (px equivalent)
+$gutter-width:15; 
+
+// Max width of the container 
+//$container-max-width
+
+// Padding left and right of the container
+//$container-padding-left-right
+
+// Max width of the grids
+//$grids-max-width
+
+@mixin container ($column-nbr, $column-width, $gutter-width) {
+	margin:0 auto;
+	$container-padding-left-right: $gutter-width / 2;	
+	$max-width: (($column-nbr * $column-width) + ($column-nbr*$gutter-width)) - ($container-padding-left-right * 2)+px;
+	padding:0 $container-padding-left-right+px;
+	max-width: $max-width;
+}
+
+@mixin grids ($column-nbr, $column-width, $gutter-width) {
+	clear:both;
+	list-style:none; /* So we can make grids out of lists. */
+	$grids-max-width: $column-nbr * ($gutter-width + $column-width);
+	margin:0 0 0 (-($gutter-width / $grids-max-width) * 100%);
+	max-width: ($grids-max-width)+px;
+}
+
+@mixin column_extend {
+	$grids-max-width: $column-nbr * ($gutter-width + $column-width);
+	float:left;
+	margin:0 0 0 (($gutter-width / $grids-max-width) * 100%);
+}
+
+@mixin column ($column-nbr, $column-width, $gutter-width) {
+	$grids-max-width: $column-nbr * ($gutter-width + $column-width);
+	$gutter-width-pourcentage: (($gutter-width / $grids-max-width) * 100%);
+	.width_0-#{$column-nbr} {
+		@include column_extend;
+	}
+	$nbr:0;
+	@for $nbr from 0 to $column-nbr {
+		.width_#{$nbr + 1}-#{$column-nbr} {
+			@extend .width_0-#{$column-nbr};
+			width: (((($column-width / $grids-max-width) * ($nbr + 1)) * 100%) + ($nbr * $gutter-width-pourcentage));
+		}
+	}
+}
+
+@mixin fluid_grid ($column-nbr, $column-width, $gutter-width) {
+
+	.container {
+		@include container ($column-nbr, $column-width, $gutter-width);
+	}
+
+	.grids {
+		@include grids ($column-nbr, $column-width, $gutter-width);
+	}
+
+	@include column ($column-nbr, $column-width, $gutter-width);
+
+	.clear-grids {
+	  clear: both;
+	  display: block;
+	  overflow: hidden;
+	  visibility: hidden;
+	  width: 0;
+	  height: 0;
+	}
+}
+

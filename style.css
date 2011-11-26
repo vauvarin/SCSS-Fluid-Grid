@@ -1,0 +1,106 @@
+/**
+* Fluid grid
+* 	Number of columns : 18
+* 	Column width: 40px (will be set in pourcentage)
+* 	Gutter width: 15px (will be set in pourcentage)
+*/
+.container {
+  margin: 0 auto;
+  padding: 0 7.5px;
+  max-width: 975px;
+}
+
+.grids {
+  clear: both;
+  list-style: none;
+  /* So we can make grids out of lists. */
+  margin: 0 0 0 -1.515%;
+  max-width: 990px;
+}
+
+.width_0-18, .width_1-18, .width_2-18, .width_3-18, .width_4-18, .width_5-18, .width_6-18, .width_7-18, .width_8-18, .width_9-18, .width_10-18, .width_11-18, .width_12-18, .width_13-18, .width_14-18, .width_15-18, .width_16-18, .width_17-18, .width_18-18 {
+  float: left;
+  margin: 0 0 0 1.515%;
+}
+
+.width_1-18 {
+  width: 4.04%;
+}
+
+.width_2-18 {
+  width: 9.596%;
+}
+
+.width_3-18 {
+  width: 15.152%;
+}
+
+.width_4-18 {
+  width: 20.707%;
+}
+
+.width_5-18 {
+  width: 26.263%;
+}
+
+.width_6-18 {
+  width: 31.818%;
+}
+
+.width_7-18 {
+  width: 37.374%;
+}
+
+.width_8-18 {
+  width: 42.929%;
+}
+
+.width_9-18 {
+  width: 48.485%;
+}
+
+.width_10-18 {
+  width: 54.04%;
+}
+
+.width_11-18 {
+  width: 59.596%;
+}
+
+.width_12-18 {
+  width: 65.152%;
+}
+
+.width_13-18 {
+  width: 70.707%;
+}
+
+.width_14-18 {
+  width: 76.263%;
+}
+
+.width_15-18 {
+  width: 81.818%;
+}
+
+.width_16-18 {
+  width: 87.374%;
+}
+
+.width_17-18 {
+  width: 92.929%;
+}
+
+.width_18-18 {
+  width: 98.485%;
+}
+
+.clear-grids {
+  clear: both;
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
